@@ -1,6 +1,5 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import AlertContainer from '@/components/alert';
@@ -8,7 +7,7 @@ import Comments from '@/components/comments';
 import PostPlaceholder from '@/components/post-placeholder';
 import { AlertProvider, useAlert } from '@/context/alert';
 import { AuthorProvider } from '@/context/author';
-import { useModel, ModelType } from '@/lib/models/hook';
+import { useModel } from '@/lib/models/hook';
 import { addComment, deleteComment, editComment } from '@/lib/models/mutations';
 import type { Post as PostType, Author as AuthorType } from '@/lib/prisma/api';
 import Ably from 'ably';
