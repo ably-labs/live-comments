@@ -16,7 +16,6 @@ Update your `env.local` file with the following:
 
 ```
 POSTGRES_URL="postgres://postgres:postgres@localhost:5432/postgres"
-POSTGRES_PRISMA_URL="postgres://postgres:postgres@localhost:5432/postgres"
 POSTGRES_URL_NON_POOLING="postgres://postgres:postgres@localhost:5432/postgres"
 POSTGRES_USER=postgres
 POSTGRES_HOST=localhost
