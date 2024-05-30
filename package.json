@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "db": "prisma generate && prisma db push && prisma db seed",
+    "postinstall": "prisma generate",
+    "db": "prisma db push && npx prisma db execute --file ./prisma/migrations/trigger.sql --schema prisma/schema.prisma && prisma db seed",
     "build": "next build",
     "format": "prettier './**/*.{js,ts}' --write",
     "format:check": "prettier './**/*.{js,ts}' --check",
@@ -18,13 +19,13 @@
   },
   "dependencies": {
     "@ably-labs/models": "0.0.3",
-    "ably": "^2.0.3",
     "@heroicons/react": "^2.0.18",
-    "@prisma/client": "5.0.0",
+    "@prisma/client": "^5.14.0",
     "@types/node": "18.15.11",
     "@types/react": "18.2.14",
     "@types/react-dom": "18.0.11",
     "@types/uuid": "^9.0.7",
+    "ably": "^2.0.3",
     "autoprefixer": "10.4.14",
     "eslint": "8.38.0",
     "eslint-config-next": "13.3.0",
@@ -43,7 +44,7 @@
   "devDependencies": {
     "@types/ms": "^0.7.31",
     "cross-fetch": "^4.0.0",
-    "prisma": "^5.0.0",
+    "prisma": "^5.14.0",
     "turbo": "^1.9.3"
   }
 }
